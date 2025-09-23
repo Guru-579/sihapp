@@ -1,0 +1,124 @@
+{
+  "auth": {
+    "login": "లాగిన్",
+    "mobileNumber": "మొబైల్ నంబర్",
+    "getOtp": "OTP పొందండి",
+    "enterOtp": "OTP ప్రవేశపెట్టండి",
+    "verifyLogin": "ధృవీకరించి లాగిన్ అవ్వండి",
+    "selectLanguage": "భాష ఎంచుకోండి",
+    "enterMobileNumber": "మీ మొబైల్ నంబర్ ప్రవేశపెట్టండి",
+    "enterOtpSent": "మీ మొబైల్‌కు పంపిన OTP ప్రవేశపెట్టండి",
+    "invalidMobile": "దయచేసి చెల్లుబాటు అయ్యే మొబైల్ నంబర్ ప్రవేశపెట్టండి",
+    "otpSent": "OTP విజయవంతంగా పంపబడింది",
+    "loginSuccess": "లాగిన్ విజయవంతం",
+    "loginFailed": "లాగిన్ విఫలమైంది"
+  },
+  "dashboard": {
+    "dashboard": "డ్యాష్‌బోర్డ్",
+    "welcome": "స్వాగతం, రైతు గారు!",
+    "selectFeature": "ప్రారంభించడానికి ఒక ఫీచర్ ఎంచుకోండి"
+  },
+  "features": {
+    "soilHealth": "మట్టి ఆరోగ్యం",
+    "weather": "వాతావరణం",
+    "pestDisease": "కీటకాలు/వ్యాధులు",
+    "marketPrices": "మార్కెట్ ధరలు",
+    "aiChatbot": "AI సహాయకుడు"
+  },
+  "actions": {
+    "captureImage": "ఫోటో తీయండి",
+    "uploadFile": "ఫైల్ అప్‌లోడ్ చేయండి",
+    "uploadImage": "ఫోటో అప్‌లోడ్ చేయండి",
+    "selectCrop": "పంట ఎంచుకోండి",
+    "selectDistrict": "జిల్లా ఎంచుకోండి",
+    "refresh": "రిఫ్రెష్ చేయండి",
+    "back": "వెనుకకు",
+    "send": "పంపండి",
+    "listening": "వింటున్నాను...",
+    "speak": "మాట్లాడండి"
+  },
+  "placeholders": {
+    "soilResults": "మట్టి ఫలితాలు ఇక్కడ కనిపిస్తాయి",
+    "weatherInfo": "వాతావరణ సమాచారం ఇక్కడ కనిపిస్తుంది",
+    "pestResults": "కీటకాలు/వ్యాధుల ఫలితాలు ఇక్కడ కనిపిస్తాయి",
+    "marketData": "మండి ధరలు ఇక్కడ కనిపిస్తాయి",
+    "chatPlaceholder": "వ్యవసాయం గురించి ఏదైనా అడగండి...",
+    "selectCrop": "పంట ఎంచుకోండి...",
+    "selectDistrict": "జిల్లా ఎంచుకోండి..."
+  },
+  "navigation": {
+    "notifications": "నోటిఫికేషన్లు",
+    "profile": "ప్రొఫైల్"
+  },
+  "soil": {
+    "scanSoilCard": "మట్టి ఆరోగ్య కార్డ్ స్కాన్ చేయండి",
+    "uploadInstruction": "ఎరువుల సిఫార్సులు పొందడానికి మీ మట్టి ఆరోగ్య కార్డ్‌ను అప్‌లోడ్ లేదా క్యాప్చర్ చేయండి",
+    "scanning": "స్కాన్ చేస్తున్నాము...",
+    "analysis": "విశ్లేషణ",
+    "recommendations": "సిఫార్సులు",
+    "ph": "pH స్థాయి",
+    "nitrogen": "నైట్రోజన్ (N)",
+    "phosphorus": "ఫాస్ఫరస్ (P)",
+    "potassium": "పొటాషియం (K)",
+    "organicCarbon": "సేంద్రీయ కార్బన్",
+    "good": "మంచిది",
+    "moderate": "మధ్యమం",
+    "poor": "చెడ్డది"
+  },
+  "weather": {
+    "currentWeather": "ప్రస్తుత వాతావరణం",
+    "forecast": "3-రోజుల అంచనా",
+    "temperature": "ఉష్ణోగ్రత",
+    "humidity": "తేమ",
+    "windSpeed": "గాలి వేగం",
+    "pressure": "ఒత్తిడి",
+    "visibility": "దృశ్యత",
+    "uvIndex": "UV సూచిక",
+    "sunrise": "సూర్యోదయం",
+    "sunset": "సూర్యాస్తమయం"
+  },
+  "pest": {
+    "detectPestDisease": "కీటకాలు/వ్యాధులను గుర్తించండి",
+    "uploadCropImage": "వ్యాధులను గుర్తించడానికి మీ పంట చిత్రాన్ని అప్‌లోడ్ లేదా క్యాప్చర్ చేయండి",
+    "analyzing": "విశ్లేషిస్తున్నాము...",
+    "disease": "వ్యాధి",
+    "confidence": "విశ్వాసం",
+    "treatment": "చికిత్స",
+    "prevention": "నివారణ"
+  },
+  "market": {
+    "mandiPrices": "మండి ధరలు",
+    "nearbyMarkets": "సమీప మార్కెట్లు",
+    "modalPrice": "మోడల్ ధర",
+    "minPrice": "కనిష్ట ధర",
+    "maxPrice": "గరిష్ట ధర",
+    "open": "తెరిచి ఉంది",
+    "closed": "మూసి ఉంది",
+    "kmAway": "కిమీ దూరంలో"
+  },
+  "chat": {
+    "aiAssistant": "AI సహాయకుడు",
+    "quickQuestions": "త్వరిత ప్రశ్నలు",
+    "cropCare": "నా పంటలను ఎలా చూసుకోవాలి?",
+    "fertilizer": "ఏ ఎరువును ఉపయోగించాలి?",
+    "irrigation": "ఎప్పుడు నీరు పోయాలి?",
+    "pestControl": "కీటకాలను ఎలా నియంత్రించాలి?",
+    "typing": "AI టైప్ చేస్తున్నాడు...",
+    "voiceInput": "వాయిస్ ఇన్‌పుట్",
+    "textToSpeech": "టెక్స్ట్ టు స్పీచ్"
+  },
+  "common": {
+    "loading": "లోడ్ అవుతున్నది...",
+    "error": "లోపం",
+    "success": "విజయం",
+    "retry": "మళ్లీ ప్రయత్నించండి",
+    "cancel": "రద్దు చేయండి",
+    "save": "సేవ్ చేయండి",
+    "delete": "తొలగించండి",
+    "edit": "సవరించండి",
+    "view": "చూడండి",
+    "close": "మూసివేయండి",
+    "yes": "అవును",
+    "no": "లేదు"
+  }
+}

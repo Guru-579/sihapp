@@ -1,0 +1,124 @@
+{
+  "auth": {
+    "login": "ਲਾਗਇਨ",
+    "mobileNumber": "ਮੋਬਾਇਲ ਨੰਬਰ",
+    "getOtp": "OTP ਲਵੋ",
+    "enterOtp": "OTP ਦਾਖਲ ਕਰੋ",
+    "verifyLogin": "ਤਸਦੀਕ ਕਰੋ ਅਤੇ ਲਾਗਇਨ ਕਰੋ",
+    "selectLanguage": "ਭਾਸ਼ਾ ਚੁਣੋ",
+    "enterMobileNumber": "ਆਪਣਾ ਮੋਬਾਇਲ ਨੰਬਰ ਦਾਖਲ ਕਰੋ",
+    "enterOtpSent": "ਆਪਣੇ ਮੋਬਾਇਲ 'ਤੇ ਭੇਜਿਆ ਗਿਆ OTP ਦਾਖਲ ਕਰੋ",
+    "invalidMobile": "ਕਿਰਪਾ ਕਰਕੇ ਇੱਕ ਵੈਧ ਮੋਬਾਇਲ ਨੰਬਰ ਦਾਖਲ ਕਰੋ",
+    "otpSent": "OTP ਸਫਲਤਾਪੂਰਵਕ ਭੇਜਿਆ ਗਿਆ",
+    "loginSuccess": "ਲਾਗਇਨ ਸਫਲ",
+    "loginFailed": "ਲਾਗਇਨ ਅਸਫਲ"
+  },
+  "dashboard": {
+    "dashboard": "ਡੈਸ਼ਬੋਰਡ",
+    "welcome": "ਜੀ ਆਇਆਂ ਨੂੰ, ਕਿਸਾਨ ਜੀ!",
+    "selectFeature": "ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਇੱਕ ਫੀਚਰ ਚੁਣੋ"
+  },
+  "features": {
+    "soilHealth": "ਮਿੱਟੀ ਦੀ ਸਿਹਤ",
+    "weather": "ਮੌਸਮ",
+    "pestDisease": "ਕੀੜੇ/ਬਿਮਾਰੀ",
+    "marketPrices": "ਮਾਰਕੀਟ ਰੇਟ",
+    "aiChatbot": "AI ਸਹਾਇਕ"
+  },
+  "actions": {
+    "captureImage": "ਫੋਟੋ ਖਿੱਚੋ",
+    "uploadFile": "ਫਾਇਲ ਅਪਲੋਡ ਕਰੋ",
+    "uploadImage": "ਫੋਟੋ ਅਪਲੋਡ ਕਰੋ",
+    "selectCrop": "ਫਸਲ ਚੁਣੋ",
+    "selectDistrict": "ਜ਼ਿਲ੍ਹਾ ਚੁਣੋ",
+    "refresh": "ਰਿਫ੍ਰੈਸ਼ ਕਰੋ",
+    "back": "ਵਾਪਸ",
+    "send": "ਭੇਜੋ",
+    "listening": "ਸੁਣ ਰਿਹਾ ਹੈ...",
+    "speak": "ਬੋਲੋ"
+  },
+  "placeholders": {
+    "soilResults": "ਮਿੱਟੀ ਦੇ ਨਤੀਜੇ ਇੱਥੇ ਦਿਖਾਈ ਦੇਣਗੇ",
+    "weatherInfo": "ਮੌਸਮ ਦੀ ਜਾਣਕਾਰੀ ਇੱਥੇ ਦਿਖਾਈ ਦੇਵੇਗੀ",
+    "pestResults": "ਕੀੜੇ/ਬਿਮਾਰੀ ਦੇ ਨਤੀਜੇ ਇੱਥੇ ਦਿਖਾਈ ਦੇਣਗੇ",
+    "marketData": "ਮੰਡੀ ਦੇ ਰੇਟ ਇੱਥੇ ਦਿਖਾਈ ਦੇਣਗੇ",
+    "chatPlaceholder": "ਖੇਤੀ ਬਾਰੇ ਕੁਝ ਵੀ ਪੁੱਛੋ...",
+    "selectCrop": "ਫਸਲ ਚੁਣੋ...",
+    "selectDistrict": "ਜ਼ਿਲ੍ਹਾ ਚੁਣੋ..."
+  },
+  "navigation": {
+    "notifications": "ਸੂਚਨਾਵਾਂ",
+    "profile": "ਪ੍ਰੋਫਾਇਲ"
+  },
+  "soil": {
+    "scanSoilCard": "ਮਿੱਟੀ ਸਿਹਤ ਕਾਰਡ ਸਕੈਨ ਕਰੋ",
+    "uploadInstruction": "ਖਾਦ ਦੀਆਂ ਸਿਫਾਰਸ਼ਾਂ ਪ੍ਰਾਪਤ ਕਰਨ ਲਈ ਆਪਣਾ ਮਿੱਟੀ ਸਿਹਤ ਕਾਰਡ ਅਪਲੋਡ ਜਾਂ ਕੈਪਚਰ ਕਰੋ",
+    "scanning": "ਸਕੈਨ ਕਰ ਰਹੇ ਹਾਂ...",
+    "analysis": "ਵਿਸ਼ਲੇਸ਼ਣ",
+    "recommendations": "ਸਿਫਾਰਸ਼ਾਂ",
+    "ph": "pH ਪੱਧਰ",
+    "nitrogen": "ਨਾਈਟ੍ਰੋਜਨ (N)",
+    "phosphorus": "ਫਾਸਫੋਰਸ (P)",
+    "potassium": "ਪੋਟਾਸ਼ੀਅਮ (K)",
+    "organicCarbon": "ਜੈਵਿਕ ਕਾਰਬਨ",
+    "good": "ਚੰਗਾ",
+    "moderate": "ਦਰਮਿਆਨਾ",
+    "poor": "ਮਾੜਾ"
+  },
+  "weather": {
+    "currentWeather": "ਮੌਜੂਦਾ ਮੌਸਮ",
+    "forecast": "3-ਦਿਨ ਦਾ ਪੂਰਵ ਅਨੁਮਾਨ",
+    "temperature": "ਤਾਪਮਾਨ",
+    "humidity": "ਨਮੀ",
+    "windSpeed": "ਹਵਾ ਦੀ ਗਤੀ",
+    "pressure": "ਦਬਾਅ",
+    "visibility": "ਦਿੱਖ",
+    "uvIndex": "UV ਸੂਚਕਾਂਕ",
+    "sunrise": "ਸੂਰਜ ਚੜ੍ਹਨਾ",
+    "sunset": "ਸੂਰਜ ਡੁੱਬਣਾ"
+  },
+  "pest": {
+    "detectPestDisease": "ਕੀੜੇ/ਬਿਮਾਰੀ ਦਾ ਪਤਾ ਲਗਾਓ",
+    "uploadCropImage": "ਬਿਮਾਰੀਆਂ ਦਾ ਪਤਾ ਲਗਾਉਣ ਲਈ ਆਪਣੀ ਫਸਲ ਦੀ ਤਸਵੀਰ ਅਪਲੋਡ ਜਾਂ ਕੈਪਚਰ ਕਰੋ",
+    "analyzing": "ਵਿਸ਼ਲੇਸ਼ਣ ਕਰ ਰਹੇ ਹਾਂ...",
+    "disease": "ਬਿਮਾਰੀ",
+    "confidence": "ਭਰੋਸਾ",
+    "treatment": "ਇਲਾਜ",
+    "prevention": "ਰੋਕਥਾਮ"
+  },
+  "market": {
+    "mandiPrices": "ਮੰਡੀ ਰੇਟ",
+    "nearbyMarkets": "ਨੇੜਲੀਆਂ ਮੰਡੀਆਂ",
+    "modalPrice": "ਮੋਡਲ ਰੇਟ",
+    "minPrice": "ਘੱਟੋ ਘੱਟ ਰੇਟ",
+    "maxPrice": "ਵੱਧ ਤੋਂ ਵੱਧ ਰੇਟ",
+    "open": "ਖੁੱਲ੍ਹਾ",
+    "closed": "ਬੰਦ",
+    "kmAway": "ਕਿਮੀ ਦੂਰ"
+  },
+  "chat": {
+    "aiAssistant": "AI ਸਹਾਇਕ",
+    "quickQuestions": "ਤੁਰੰਤ ਸਵਾਲ",
+    "cropCare": "ਆਪਣੀਆਂ ਫਸਲਾਂ ਦੀ ਦੇਖਭਾਲ ਕਿਵੇਂ ਕਰੀਏ?",
+    "fertilizer": "ਕਿਹੜੀ ਖਾਦ ਵਰਤਣੀ ਚਾਹੀਦੀ ਹੈ?",
+    "irrigation": "ਕਦੋਂ ਪਾਣੀ ਦੇਣਾ ਚਾਹੀਦਾ ਹੈ?",
+    "pestControl": "ਕੀੜਿਆਂ ਨੂੰ ਕਿਵੇਂ ਕਾਬੂ ਕਰੀਏ?",
+    "typing": "AI ਟਾਈਪ ਕਰ ਰਿਹਾ ਹੈ...",
+    "voiceInput": "ਆਵਾਜ਼ ਇਨਪੁੱਟ",
+    "textToSpeech": "ਟੈਕਸਟ ਟੂ ਸਪੀਚ"
+  },
+  "common": {
+    "loading": "ਲੋਡ ਹੋ ਰਿਹਾ ਹੈ...",
+    "error": "ਗਲਤੀ",
+    "success": "ਸਫਲਤਾ",
+    "retry": "ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ",
+    "cancel": "ਰੱਦ ਕਰੋ",
+    "save": "ਸੇਵ ਕਰੋ",
+    "delete": "ਮਿਟਾਓ",
+    "edit": "ਸੰਪਾਦਿਤ ਕਰੋ",
+    "view": "ਵੇਖੋ",
+    "close": "ਬੰਦ ਕਰੋ",
+    "yes": "ਹਾਂ",
+    "no": "ਨਹੀਂ"
+  }
+}

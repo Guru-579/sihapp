@@ -1,0 +1,124 @@
+{
+  "auth": {
+    "login": "Login",
+    "mobileNumber": "Mobile Number",
+    "getOtp": "Get OTP",
+    "enterOtp": "Enter OTP",
+    "verifyLogin": "Verify & Login",
+    "selectLanguage": "Select Language",
+    "enterMobileNumber": "Enter your mobile number",
+    "enterOtpSent": "Enter the OTP sent to your mobile",
+    "invalidMobile": "Please enter a valid mobile number",
+    "otpSent": "OTP sent successfully",
+    "loginSuccess": "Login successful",
+    "loginFailed": "Login failed"
+  },
+  "dashboard": {
+    "dashboard": "Dashboard",
+    "welcome": "Welcome, Farmer!",
+    "selectFeature": "Select a feature to get started"
+  },
+  "features": {
+    "soilHealth": "Soil Health",
+    "weather": "Weather",
+    "pestDisease": "Pest/Disease",
+    "marketPrices": "Market Prices",
+    "aiChatbot": "AI Assistant"
+  },
+  "actions": {
+    "captureImage": "Capture Image",
+    "uploadFile": "Upload File",
+    "uploadImage": "Upload Image",
+    "selectCrop": "Select Crop",
+    "selectDistrict": "Select District",
+    "refresh": "Refresh",
+    "back": "Back",
+    "send": "Send",
+    "listening": "Listening...",
+    "speak": "Speak"
+  },
+  "placeholders": {
+    "soilResults": "Soil results will appear here",
+    "weatherInfo": "Weather information will appear here",
+    "pestResults": "Pest/Disease results will appear here",
+    "marketData": "Mandi prices will appear here",
+    "chatPlaceholder": "Ask me anything about farming...",
+    "selectCrop": "Choose crop...",
+    "selectDistrict": "Choose district..."
+  },
+  "navigation": {
+    "notifications": "Notifications",
+    "profile": "Profile"
+  },
+  "soil": {
+    "scanSoilCard": "Scan Soil Health Card",
+    "uploadInstruction": "Upload or capture your soil health card to get fertilizer recommendations",
+    "scanning": "Scanning...",
+    "analysis": "Analysis",
+    "recommendations": "Recommendations",
+    "ph": "pH Level",
+    "nitrogen": "Nitrogen (N)",
+    "phosphorus": "Phosphorus (P)",
+    "potassium": "Potassium (K)",
+    "organicCarbon": "Organic Carbon",
+    "good": "Good",
+    "moderate": "Moderate",
+    "poor": "Poor"
+  },
+  "weather": {
+    "currentWeather": "Current Weather",
+    "forecast": "3-Day Forecast",
+    "temperature": "Temperature",
+    "humidity": "Humidity",
+    "windSpeed": "Wind Speed",
+    "pressure": "Pressure",
+    "visibility": "Visibility",
+    "uvIndex": "UV Index",
+    "sunrise": "Sunrise",
+    "sunset": "Sunset"
+  },
+  "pest": {
+    "detectPestDisease": "Detect Pest/Disease",
+    "uploadCropImage": "Upload or capture an image of your crop to detect diseases",
+    "analyzing": "Analyzing...",
+    "disease": "Disease",
+    "confidence": "Confidence",
+    "treatment": "Treatment",
+    "prevention": "Prevention"
+  },
+  "market": {
+    "mandiPrices": "Mandi Prices",
+    "nearbyMarkets": "Nearby Markets",
+    "modalPrice": "Modal Price",
+    "minPrice": "Min Price",
+    "maxPrice": "Max Price",
+    "open": "Open",
+    "closed": "Closed",
+    "kmAway": "km away"
+  },
+  "chat": {
+    "aiAssistant": "AI Assistant",
+    "quickQuestions": "Quick Questions",
+    "cropCare": "How to care for my crops?",
+    "fertilizer": "Which fertilizer should I use?",
+    "irrigation": "When should I irrigate?",
+    "pestControl": "How to control pests?",
+    "typing": "AI is typing...",
+    "voiceInput": "Voice Input",
+    "textToSpeech": "Text to Speech"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "retry": "Retry",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "view": "View",
+    "close": "Close",
+    "yes": "Yes",
+    "no": "No"
+  }
+}

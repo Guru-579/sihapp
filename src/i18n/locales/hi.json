@@ -1,0 +1,124 @@
+{
+  "auth": {
+    "login": "लॉगिन",
+    "mobileNumber": "मोबाइल नंबर",
+    "getOtp": "OTP प्राप्त करें",
+    "enterOtp": "OTP दर्ज करें",
+    "verifyLogin": "सत्यापित करें और लॉगिन करें",
+    "selectLanguage": "भाषा चुनें",
+    "enterMobileNumber": "अपना मोबाइल नंबर दर्ज करें",
+    "enterOtpSent": "आपके मोबाइल पर भेजा गया OTP दर्ज करें",
+    "invalidMobile": "कृपया एक वैध मोबाइल नंबर दर्ज करें",
+    "otpSent": "OTP सफलतापूर्वक भेजा गया",
+    "loginSuccess": "लॉगिन सफल",
+    "loginFailed": "लॉगिन असफल"
+  },
+  "dashboard": {
+    "dashboard": "डैशबोर्ड",
+    "welcome": "स्वागत है, किसान जी!",
+    "selectFeature": "शुरू करने के लिए एक सुविधा चुनें"
+  },
+  "features": {
+    "soilHealth": "मिट्टी की सेहत",
+    "weather": "मौसम",
+    "pestDisease": "कीट/रोग",
+    "marketPrices": "बाजार भाव",
+    "aiChatbot": "AI सहायक"
+  },
+  "actions": {
+    "captureImage": "फोटो लें",
+    "uploadFile": "फाइल अपलोड करें",
+    "uploadImage": "फोटो अपलोड करें",
+    "selectCrop": "फसल चुनें",
+    "selectDistrict": "जिला चुनें",
+    "refresh": "रिफ्रेश करें",
+    "back": "वापस",
+    "send": "भेजें",
+    "listening": "सुन रहा है...",
+    "speak": "बोलें"
+  },
+  "placeholders": {
+    "soilResults": "मिट्टी के परिणाम यहाँ दिखेंगे",
+    "weatherInfo": "मौसम की जानकारी यहाँ दिखेगी",
+    "pestResults": "कीट/रोग के परिणाम यहाँ दिखेंगे",
+    "marketData": "मंडी के भाव यहाँ दिखेंगे",
+    "chatPlaceholder": "खेती के बारे में कुछ भी पूछें...",
+    "selectCrop": "फसल चुनें...",
+    "selectDistrict": "जिला चुनें..."
+  },
+  "navigation": {
+    "notifications": "सूचनाएं",
+    "profile": "प्रोफाइल"
+  },
+  "soil": {
+    "scanSoilCard": "मिट्टी स्वास्थ्य कार्ड स्कैन करें",
+    "uploadInstruction": "उर्वरक सुझाव पाने के लिए अपना मिट्टी स्वास्थ्य कार्ड अपलोड या कैप्चर करें",
+    "scanning": "स्कैन कर रहे हैं...",
+    "analysis": "विश्लेषण",
+    "recommendations": "सुझाव",
+    "ph": "pH स्तर",
+    "nitrogen": "नाइट्रोजन (N)",
+    "phosphorus": "फास्फोरस (P)",
+    "potassium": "पोटेशियम (K)",
+    "organicCarbon": "जैविक कार्बन",
+    "good": "अच्छा",
+    "moderate": "मध्यम",
+    "poor": "खराब"
+  },
+  "weather": {
+    "currentWeather": "वर्तमान मौसम",
+    "forecast": "3-दिन का पूर्वानुमान",
+    "temperature": "तापमान",
+    "humidity": "नमी",
+    "windSpeed": "हवा की गति",
+    "pressure": "दबाव",
+    "visibility": "दृश्यता",
+    "uvIndex": "UV सूचकांक",
+    "sunrise": "सूर्योदय",
+    "sunset": "सूर्यास्त"
+  },
+  "pest": {
+    "detectPestDisease": "कीट/रोग का पता लगाएं",
+    "uploadCropImage": "रोगों का पता लगाने के लिए अपनी फसल की तस्वीर अपलोड या कैप्चर करें",
+    "analyzing": "विश्लेषण कर रहे हैं...",
+    "disease": "रोग",
+    "confidence": "विश्वास",
+    "treatment": "उपचार",
+    "prevention": "रोकथाम"
+  },
+  "market": {
+    "mandiPrices": "मंडी भाव",
+    "nearbyMarkets": "नजदीकी मंडियां",
+    "modalPrice": "मोडल भाव",
+    "minPrice": "न्यूनतम भाव",
+    "maxPrice": "अधिकतम भाव",
+    "open": "खुला",
+    "closed": "बंद",
+    "kmAway": "किमी दूर"
+  },
+  "chat": {
+    "aiAssistant": "AI सहायक",
+    "quickQuestions": "त्वरित प्रश्न",
+    "cropCare": "अपनी फसलों की देखभाल कैसे करें?",
+    "fertilizer": "कौन सा उर्वरक इस्तेमाल करना चाहिए?",
+    "irrigation": "कब सिंचाई करनी चाहिए?",
+    "pestControl": "कीटों को कैसे नियंत्रित करें?",
+    "typing": "AI टाइप कर रहा है...",
+    "voiceInput": "आवाज इनपुट",
+    "textToSpeech": "टेक्स्ट टू स्पीच"
+  },
+  "common": {
+    "loading": "लोड हो रहा है...",
+    "error": "त्रुटि",
+    "success": "सफलता",
+    "retry": "पुनः प्रयास करें",
+    "cancel": "रद्द करें",
+    "save": "सहेजें",
+    "delete": "हटाएं",
+    "edit": "संपादित करें",
+    "view": "देखें",
+    "close": "बंद करें",
+    "yes": "हाँ",
+    "no": "नहीं"
+  }
+}
