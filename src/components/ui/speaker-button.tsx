@@ -60,12 +60,34 @@ const SpeakerButton: React.FC<SpeakerButtonProps> = ({
       setIsCurrentlySpeaking(true);
       onSpeakStart?.();
 
-      await speak(text, language);
+      // Use the language prop if provided, otherwise use context language
+      const targetLanguage = language || 'en';
+      await speak(text, targetLanguage);
       
       setIsCurrentlySpeaking(false);
       onSpeakEnd?.();
     } catch (error) {
       console.error('Speech error:', error);
+      
+      // Try fallback with English if non-English fails
+      if (language && language !== 'en') {
+        try {
+          await speak(text, 'en');
+          setIsCurrentlySpeaking(false);
+          onSpeakEnd?.();
+        } catch (fallbackError) {
+          console.error('Fallback speech error:', fallbackError);
+          setIsCurrentlySpeaking(false);
+          onSpeakEnd?.();
+        }
+      } else {
+        setIsCurrentlySpeaking(false);
+        onSpeakEnd?.();
+      }
+    } finally {
+      setIsLoading(false);
+    }
+  };
       setIsCurrentlySpeaking(false);
       onSpeakEnd?.();
     } finally {

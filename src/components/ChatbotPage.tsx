@@ -188,10 +188,30 @@ const ChatbotPage = ({ onBack }: ChatbotPageProps) => {
   };
 
   const quickQuestions = [
-    { key: 'soil', text: language === 'hi' ? 'मिट्टी की सेहत' : language === 'te' ? 'మట్టి ఆరోగ్యం' : language === 'pa' ? 'ਮਿੱਟੀ ਦੀ ਸਿਹਤ' : 'Soil Health' },
-    { key: 'pest', text: language === 'hi' ? 'कीट नियंत्रण' : language === 'te' ? 'కీటకాల నియంత్రణ' : language === 'pa' ? 'ਕੀੜੇ ਨਿਯੰਤਰਣ' : 'Pest Control' },
-    { key: 'weather', text: language === 'hi' ? 'मौसम सलाह' : language === 'te' ? 'వాతావరణ సలహా' : language === 'pa' ? 'ਮੌਸਮ ਸਲਾਹ' : 'Weather Advice' },
-    { key: 'fertilizer', text: language === 'hi' ? 'खाद सलाह' : language === 'te' ? 'ఎరువు సలహా' : language === 'pa' ? 'ਖਾਦ ਸਲਾਹ' : 'Fertilizer Tips' }
+    { 
+      key: 'soil', 
+      text: language === 'hi' ? 'मिट्टी की सेहत' : 
+            language === 'te' ? 'మట్టి ఆరోగ్యం' : 
+            language === 'pa' ? 'ਮਿੱਟੀ ਦੀ ਸਿਹਤ' : 'Soil Health' 
+    },
+    { 
+      key: 'pest', 
+      text: language === 'hi' ? 'कीट नियंत्रण' : 
+            language === 'te' ? 'కీటకాల నియంత్రణ' : 
+            language === 'pa' ? 'ਕੀੜੇ ਨਿਯੰਤਰਣ' : 'Pest Control' 
+    },
+    { 
+      key: 'weather', 
+      text: language === 'hi' ? 'मौसम सलाह' : 
+            language === 'te' ? 'వాతావరణ సలహా' : 
+            language === 'pa' ? 'ਮੌਸਮ ਸਲਾਹ' : 'Weather Advice' 
+    },
+    { 
+      key: 'fertilizer', 
+      text: language === 'hi' ? 'खाद सलाह' : 
+            language === 'te' ? 'ఎరువు సలహా' : 
+            language === 'pa' ? 'ਖਾਦ ਸਲਾਹ' : 'Fertilizer Tips' 
+    }
   ];
 
   const handleQuickQuestion = (key: string) => {
@@ -345,11 +365,17 @@ const ChatbotPage = ({ onBack }: ChatbotPageProps) => {
           </div>
           
           <Button
-            onClick={handleVoiceInput}
-            variant="outline"
-            disabled={!voiceSupported}
-            className={`w-full h-12 ${
-              !voiceSupported 
+              {!voiceSupported 
+                ? (language === 'hi' ? 'आवाज़ समर्थित नहीं' : 
+                   language === 'te' ? 'వాయిస్ మద్దతు లేదు' : 
+                   language === 'pa' ? 'ਆਵਾਜ਼ ਸਮਰਥਿਤ ਨਹੀਂ' : 'Voice Not Supported')
+                : isListening 
+                  ? (language === 'hi' ? 'सुन रहा है... (रोकने के लिए टैप करें)' : 
+                     language === 'te' ? 'వింటున్నాను... (ఆపడానికి టాప్ చేయండి)' : 
+                     language === 'pa' ? 'ਸੁਣ ਰਿਹਾ ਹਾਂ... (ਰੋਕਣ ਲਈ ਟੈਪ ਕਰੋ)' : 'Listening... (Tap to stop)')
+                  : (language === 'hi' ? 'आवाज़ इनपुट' : 
+                     language === 'te' ? 'వాయిస్ ఇన్‌పుట్' : 
+                     language === 'pa' ? 'ਆਵਾਜ਼ ਇਨਪੁੱਟ' : 'Voice Input')
                 ? 'opacity-50 cursor-not-allowed' 
                 : isListening 
                   ? 'bg-chatbot text-white border-chatbot' 

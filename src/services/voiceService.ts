@@ -31,6 +31,12 @@ class VoiceService {
   // Get available voices for a language
   private getVoiceForLanguage(language: string): SpeechSynthesisVoice | null {
     const voices = this.synthesis.getVoices();
+    
+    // If no voices loaded yet, wait for them
+    if (voices.length === 0) {
+      return null;
+    }
+    
     const targetLang = this.getVoiceLanguage(language);
     
     // Try to find exact language match
@@ -40,6 +46,21 @@ class VoiceService {
     if (!voice) {
       const langFamily = targetLang.split('-')[0];
       voice = voices.find(v => v.lang.startsWith(langFamily));
+    }
+    
+    // Try alternative language codes for Indian languages
+    if (!voice && language !== 'en') {
+      const alternativeCodes = {
+        'hi': ['hi', 'hi-IN', 'hi-Latn'],
+        'te': ['te', 'te-IN'],
+        'pa': ['pa', 'pa-IN', 'pa-Guru']
+      };
+      
+      const alternatives = alternativeCodes[language] || [];
+      for (const altCode of alternatives) {
+        voice = voices.find(v => v.lang.includes(altCode));
+        if (voice) break;
+      }
     }
     
     // Final fallback to English
@@ -59,6 +80,28 @@ class VoiceService {
 
     // Stop any current speech
     this.stop();
+    
+    // Wait for voices to load if they haven't already
+    const voices = this.synthesis.getVoices();
+    if (voices.length === 0) {
+      await new Promise<void>((resolve) => {
+        const checkVoices = () => {
+          if (this.synthesis.getVoices().length > 0) {
+            resolve();
+          } else {
+            setTimeout(checkVoices, 100);
+          }
+        };
+        
+        this.synthesis.onvoiceschanged = () => {
+          resolve();
+        };
+        
+        // Fallback timeout
+        setTimeout(() => resolve(), 2000);
+        checkVoices();
+      });
+    }
 
     return new Promise((resolve, reject) => {
       const utterance = new SpeechSynthesisUtterance(text);
@@ -68,12 +111,14 @@ class VoiceService {
       if (voice) {
         utterance.voice = voice;
         utterance.lang = voice.lang;
+        console.log(`Using voice: ${voice.name} (${voice.lang}) for language: ${language}`);
       } else {
         utterance.lang = this.getVoiceLanguage(language);
+        console.log(`No specific voice found, using language code: ${utterance.lang}`);
       }
 
       // Apply settings
-      utterance.rate = settings?.rate || 0.9;
+      utterance.rate = settings?.rate || (language === 'en' ? 0.9 : 0.8); // Slower for non-English
       utterance.pitch = settings?.pitch || 1;
       utterance.volume = settings?.volume || 1;
 
@@ -85,12 +130,19 @@ class VoiceService {
 
       utterance.onerror = (event) => {
         this.currentUtterance = null;
-        console.error('Speech synthesis error:', event);
-        reject(event);
+        console.error('Speech synthesis error:', event.error);
+        
+        // Try fallback with English if non-English fails
+        if (language !== 'en') {
+          console.log('Retrying with English voice...');
+          this.speak(text, 'en', settings).then(resolve).catch(reject);
+        } else {
+          reject(event);
+        }
       };
 
       utterance.onstart = () => {
-        console.log('Speech started:', text.substring(0, 50) + '...');
+        console.log(`Speech started (${language}):`, text.substring(0, 50) + '...');
       };
 
       this.currentUtterance = utterance;
@@ -209,7 +261,16 @@ export const VoiceMessages = {
 
 // Initialize voices when they become available
 if (typeof window !== 'undefined') {
-  window.speechSynthesis.onvoiceschanged = () => {
-    console.log('Speech synthesis voices loaded');
+  const loadVoices = () => {
+    const voices = window.speechSynthesis.getVoices();
+    console.log('Speech synthesis voices loaded:', voices.length);
+    voices.forEach(voice => {
+      console.log(`Available voice: ${voice.name} (${voice.lang})`);
+    });
   };
+  
+  window.speechSynthesis.onvoiceschanged = loadVoices;
+  
+  // Also try to load voices immediately
+  setTimeout(loadVoices, 100);
 }
