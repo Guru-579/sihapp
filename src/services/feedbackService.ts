@@ -95,6 +95,7 @@ export const trackEvent = async (eventData: Omit<AnalyticsEvent, 'id' | 'timesta
   try {
     const event: AnalyticsEvent = {
       ...eventData,
+      userId: eventData.userId || null,
       timestamp: new Date()
     };
 
