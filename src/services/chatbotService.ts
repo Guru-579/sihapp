@@ -12,8 +12,8 @@ export interface ChatbotResponse {
   error?: string;
 }
 
-const OPENAI_API_KEY = import.meta.env.VITE_OPENAI_API_KEY;
-const OPENAI_API_URL = 'https://api.openai.com/v1/chat/completions';
+const GEMINI_API_KEY = 'AIzaSyBLfsLr7eK5DRa_sZnDBmqFkXwf20z9OGY';
+const GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent';
 
 // System prompt for agricultural chatbot
 const SYSTEM_PROMPT = `You are an expert agricultural advisor and farming assistant. Your role is to help farmers with:
@@ -53,46 +53,45 @@ export const generateChatResponse = async (
   language: string = 'en'
 ): Promise<ChatbotResponse> => {
   try {
-    if (!OPENAI_API_KEY) {
-      throw new Error('OpenAI API key not configured');
+    if (!GEMINI_API_KEY) {
+      throw new Error('Gemini API key not configured');
     }
 
-    // Prepare messages for OpenAI API
-    const openaiMessages = [
-      {
-        role: 'system',
-        content: LANGUAGE_PROMPTS[language as keyof typeof LANGUAGE_PROMPTS] || LANGUAGE_PROMPTS.en
-      },
-      ...messages.map(msg => ({
-        role: msg.role,
-        content: msg.content
-      }))
-    ];
+    // Prepare content for Gemini API
+    const systemPrompt = LANGUAGE_PROMPTS[language as keyof typeof LANGUAGE_PROMPTS] || LANGUAGE_PROMPTS.en;
+    const conversationHistory = messages.map(msg => 
+      `${msg.role === 'user' ? 'User' : 'Assistant'}: ${msg.content}`
+    ).join('\n\n');
+    
+    const fullPrompt = `${systemPrompt}\n\nConversation:\n${conversationHistory}`;
 
-    const response = await fetch(OPENAI_API_URL, {
+    const response = await fetch(`${GEMINI_API_URL}?key=${GEMINI_API_KEY}`, {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${OPENAI_API_KEY}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        model: 'gpt-4o-mini',
-        messages: openaiMessages,
-        max_tokens: 800,
-        temperature: 0.7,
-        presence_penalty: 0.1,
-        frequency_penalty: 0.1,
-        top_p: 0.9
+        contents: [{
+          parts: [{
+            text: fullPrompt
+          }]
+        }],
+        generationConfig: {
+          temperature: 0.7,
+          topK: 40,
+          topP: 0.95,
+          maxOutputTokens: 800,
+        }
       })
     });
 
     if (!response.ok) {
       const errorData = await response.json();
-      throw new Error(errorData.error?.message || 'OpenAI API request failed');
+      throw new Error(errorData.error?.message || 'Gemini API request failed');
     }
 
     const data = await response.json();
-    const assistantMessage = data.choices[0]?.message?.content;
+    const assistantMessage = data.candidates?.[0]?.content?.parts?.[0]?.text;
 
     if (!assistantMessage) {
       throw new Error('No response generated');
@@ -108,10 +107,10 @@ export const generateChatResponse = async (
     
     // Fallback responses based on language
     const fallbackResponses = {
-      en: "I'm having trouble connecting right now. Please try asking about soil health, pest control, weather advice, or crop management, and I'll do my best to help!",
-      te: "ప్రస్తుతం కనెక్ట్ అవ్వడంలో సమస్య ఉంది. దయచేసి మట్టి ఆరోగ్యం, కీటకాల నియంత్రణ, వాతావరణ సలహా లేదా పంట నిర్వహణ గురించి అడగండి, నేను మీకు సహాయం చేయడానికి ప్రయత్నిస్తాను!",
-      hi: "अभी कनेक्ट करने में समस्या हो रही है। कृपया मिट्टी की सेहत, कीट नियंत्रण, मौसम सलाह या फसल प्रबंधन के बारे में पूछें, मैं आपकी मदद करने की कोशिश करूंगा!",
-      pa: "ਹੁਣ ਕਨੈਕਟ ਕਰਨ ਵਿੱਚ ਸਮੱਸਿਆ ਹੈ। ਕਿਰਪਾ ਕਰਕੇ ਮਿੱਟੀ ਦੀ ਸਿਹਤ, ਕੀੜੇ ਨਿਯੰਤਰਣ, ਮੌਸਮ ਸਲਾਹ ਜਾਂ ਫਸਲ ਪ੍ਰਬੰਧਨ ਬਾਰੇ ਪੁੱਛੋ, ਮੈਂ ਤੁਹਾਡੀ ਮਦਦ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰਾਂਗਾ!"
+      en: "I'm having trouble connecting to the AI service right now. Here's some general farming advice: For healthy crops, ensure proper soil drainage, use organic compost, monitor for pests regularly, and follow weather forecasts for irrigation timing.",
+      te: "ప్రస్తుతం AI సేవకు కనెక్ట్ అవ్వడంలో సమస్య ఉంది. ఇక్కడ కొన్ని సాధారణ వ్యవసాయ సలహాలు: ఆరోగ్యకరమైన పంటల కోసం, సరైన మట్టి డ్రైనేజీని నిర్ధారించండి, సేంద్రీయ కంపోస్ట్ వాడండి, కీటకాల కోసం క్రమం తప్పకుండా పర్యవేక్షించండి.",
+      hi: "अभी AI सेवा से कनेक्ट करने में समस्या हो रही है। यहाँ कुछ सामान्य कृषि सलाह है: स्वस्थ फसलों के लिए, उचित मिट्टी जल निकासी सुनिश्चित करें, जैविक खाद का उपयोग करें, नियमित रूप से कीटों की निगरानी करें।",
+      pa: "ਹੁਣ AI ਸੇਵਾ ਨਾਲ ਕਨੈਕਟ ਕਰਨ ਵਿੱਚ ਸਮੱਸਿਆ ਹੈ। ਇੱਥੇ ਕੁਝ ਆਮ ਖੇਤੀ ਸਲਾਹ ਹੈ: ਸਿਹਤਮੰਦ ਫਸਲਾਂ ਲਈ, ਸਹੀ ਮਿੱਟੀ ਡਰੇਨੇਜ ਯਕੀਨੀ ਬਣਾਓ, ਜੈਵਿਕ ਖਾਦ ਵਰਤੋ, ਨਿਯਮਿਤ ਕੀੜਿਆਂ ਦੀ ਨਿਗਰਾਨੀ ਕਰੋ।"
     };
 
     return {

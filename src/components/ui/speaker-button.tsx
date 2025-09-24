@@ -1,7 +1,8 @@
 import React from 'react';
 import { Volume2 } from 'lucide-react';
 import { Button } from './button';
-import { cn } from '../../lib/utils';
+import { cn } from '@/lib/utils';
+import { useVoiceAssistant } from '@/services/voiceService';
 
 interface SpeakerButtonProps {
   text: string;
@@ -10,36 +11,16 @@ interface SpeakerButtonProps {
   variant?: 'default' | 'outline' | 'ghost';
 }
 
-export const SpeakerButton: React.FC<SpeakerButtonProps> = ({
+const SpeakerButton: React.FC<SpeakerButtonProps> = ({
   text,
   className,
-  size = 'md',
+  size = 'sm',
   variant = 'ghost'
 }) => {
+  const { speak } = useVoiceAssistant();
+
   const handleSpeak = () => {
-    if ('speechSynthesis' in window) {
-      // Cancel any ongoing speech
-      window.speechSynthesis.cancel();
-      
-      const utterance = new SpeechSynthesisUtterance(text);
-      utterance.rate = 0.8;
-      utterance.pitch = 1;
-      utterance.volume = 1;
-      
-      // Try to set a voice that supports the current language
-      const voices = window.speechSynthesis.getVoices();
-      const preferredVoice = voices.find(voice => 
-        voice.lang.startsWith('en') || voice.default
-      );
-      
-      if (preferredVoice) {
-        utterance.voice = preferredVoice;
-      }
-      
-      window.speechSynthesis.speak(utterance);
-    } else {
-      console.warn('Speech synthesis not supported in this browser');
-    }
+    speak(text);
   };
 
   const sizeClasses = {
@@ -70,3 +51,5 @@ export const SpeakerButton: React.FC<SpeakerButtonProps> = ({
     </Button>
   );
 };
+
+export default SpeakerButton;
